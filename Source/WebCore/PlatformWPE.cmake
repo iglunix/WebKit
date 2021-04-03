@@ -1,9 +1,9 @@
 include(platform/Cairo.cmake)
 include(platform/FreeType.cmake)
-include(platform/GCrypt.cmake)
-include(platform/GStreamer.cmake)
+include(platform/OpenSSL.cmake)
+#include(platform/GStreamer.cmake)
 include(platform/ImageDecoders.cmake)
-include(platform/Soup.cmake)
+include(platform/Curl.cmake)
 include(platform/TextureMapper.cmake)
 
 if (USE_EXTERNAL_HOLEPUNCH)
@@ -16,21 +16,21 @@ list(APPEND WebCore_UNIFIED_SOURCE_LIST_FILES
     "platform/SourcesGLib.txt"
 )
 
+#    "${WEBCORE_DIR}/platform/graphics/gstreamer"
+#    "${WEBCORE_DIR}/platform/mediastream/gstreamer"
 list(APPEND WebCore_PRIVATE_INCLUDE_DIRECTORIES
     "${WEBCORE_DIR}/accessibility/atk"
     "${WEBCORE_DIR}/platform/adwaita"
     "${WEBCORE_DIR}/platform/graphics/egl"
     "${WEBCORE_DIR}/platform/graphics/epoxy"
     "${WEBCORE_DIR}/platform/graphics/glx"
-    "${WEBCORE_DIR}/platform/graphics/gstreamer"
     "${WEBCORE_DIR}/platform/graphics/opengl"
     "${WEBCORE_DIR}/platform/graphics/opentype"
     "${WEBCORE_DIR}/platform/graphics/libwpe"
     "${WEBCORE_DIR}/platform/graphics/wayland"
     "${WEBCORE_DIR}/platform/mock/mediasource"
     "${WEBCORE_DIR}/platform/mediacapabilities"
-    "${WEBCORE_DIR}/platform/mediastream/gstreamer"
-    "${WEBCORE_DIR}/platform/network/glib"
+    "${WEBCORE_DIR}/platform/network/curl"
     "${WEBCORE_DIR}/platform/text/icu"
     "${WEBCORE_DIR}/platform/wpe"
 )
@@ -54,18 +54,12 @@ set(WebCore_USER_AGENT_SCRIPTS_DEPENDENCIES ${WEBCORE_DIR}/platform/wpe/RenderTh
 list(APPEND WebCore_LIBRARIES
     WPE::libwpe
     ${ATK_LIBRARIES}
-    ${GLIB_GIO_LIBRARIES}
-    ${GLIB_GMODULE_LIBRARIES}
-    ${GLIB_GOBJECT_LIBRARIES}
-    ${GLIB_LIBRARIES}
     ${LIBTASN1_LIBRARIES}
     ${UPOWERGLIB_LIBRARIES}
 )
 
 list(APPEND WebCore_SYSTEM_INCLUDE_DIRECTORIES
     ${ATK_INCLUDE_DIRS}
-    ${GIO_UNIX_INCLUDE_DIRS}
-    ${GLIB_INCLUDE_DIRS}
     ${LIBTASN1_INCLUDE_DIRS}
     ${UPOWERGLIB_INCLUDE_DIRS}
 )

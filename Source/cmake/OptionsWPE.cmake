@@ -8,6 +8,9 @@ set(USER_AGENT_BRANDING "" CACHE STRING "Branding to add to user agent string")
 find_package(Cairo 1.14.0 REQUIRED)
 find_package(Fontconfig 2.8.0 REQUIRED)
 find_package(Freetype 2.4.2 REQUIRED)
+find_package(OpenSSL 1.1.1 REQUIRED)
+find_package(LibPSL 0.20.2 REQUIRED)
+find_package(CURL 7.60.0 REQUIRED)
 #find_package(GLIB 2.44.0 REQUIRED COMPONENTS gio gio-unix gobject gthread gmodule)
 find_package(HarfBuzz 0.9.18 REQUIRED COMPONENTS ICU)
 find_package(ICU 60.2 REQUIRED COMPONENTS data i18n uc)
@@ -26,7 +29,7 @@ WEBKIT_OPTION_BEGIN()
 
 SET_AND_EXPOSE_TO_BUILD(ENABLE_DEVELOPER_MODE ${DEVELOPER_MODE})
 
-include(GStreamerDefinitions)
+# include(GStreamerDefinitions)
 
 # Public options shared with other WebKit ports. Do not add any options here
 # without approval from a WPE reviewer. There must be strong reason to support
@@ -112,7 +115,7 @@ endif ()
 WEBKIT_OPTION_DEPEND(USE_GSTREAMER_HOLEPUNCH ENABLE_VIDEO)
 WEBKIT_OPTION_DEPEND(USE_EXTERNAL_HOLEPUNCH ENABLE_VIDEO)
 
-include(GStreamerDependencies)
+#include(GStreamerDependencies)
 
 WEBKIT_OPTION_END()
 
