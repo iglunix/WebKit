@@ -1,19 +1,18 @@
 set(WebDriver_OUTPUT_NAME WPEWebDriver)
 
-list(APPEND WebDriver_SYSTEM_INCLUDE_DIRECTORIES
-    "${GLIB_INCLUDE_DIRS}"
-    "${LIBSOUP_INCLUDE_DIRS}"
-)
+list(APPEND WebDriver_SYSTEM_INCLUDE_DIRECTORIES)
 
 list(APPEND WebDriver_SOURCES
-    glib/SessionHostGlib.cpp
+    socket/SessionHostSocket.cpp
     glib/WebDriverServiceGLib.cpp
 
-    soup/HTTPServerSoup.cpp
+    socket/HTTPServerSocket.cpp
 
     wpe/WebDriverServiceWPE.cpp
 )
 
-list(APPEND WebDriver_LIBRARIES
-    ${LIBSOUP_LIBRARIES}
+list(APPEND WebDriver_LIBRARIES)
+
+list(APPEND WebDriver_FRAMEWORKS
+    JavaScriptCore
 )

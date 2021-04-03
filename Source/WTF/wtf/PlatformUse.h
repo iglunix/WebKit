@@ -78,7 +78,7 @@
 #define USE_HARFBUZZ 1
 #endif
 
-#if PLATFORM(GTK) || PLATFORM(WPE)
+#if PLATFORM(GTK)
 #define USE_SOUP 1
 #endif
 
