@@ -297,8 +297,6 @@ list(APPEND WebKit_INCLUDE_DIRECTORIES
 
 list(APPEND WebKit_SYSTEM_INCLUDE_DIRECTORIES
     ${ATK_INCLUDE_DIRS}
-    ${GIO_UNIX_INCLUDE_DIRS}
-    ${GLIB_INCLUDE_DIRS}
     ${LIBSOUP_INCLUDE_DIRS}
 )
 
@@ -309,8 +307,6 @@ list(APPEND WebKit_LIBRARIES
     HarfBuzz::ICU
     WPE::libwpe
     ${ATK_LIBRARIES}
-    ${GLIB_LIBRARIES}
-    ${GLIB_GMODULE_LIBRARIES}
     ${LIBSOUP_LIBRARIES}
 )
 
@@ -358,11 +354,9 @@ list(APPEND WPEWebInspectorResources_DERIVED_SOURCES
 )
 
 list(APPEND WPEWebInspectorResources_LIBRARIES
-    ${GLIB_GIO_LIBRARIES}
 )
 
 list(APPEND WPEWebInspectorResources_SYSTEM_INCLUDE_DIRECTORIES
-    ${GLIB_INCLUDE_DIRS}
 )
 
 add_library(WPEWebInspectorResources SHARED ${WPEWebInspectorResources_DERIVED_SOURCES})
@@ -427,8 +421,6 @@ if (ENABLE_WPE_QT_API)
     set(qtwpe_LIBRARIES
         Qt5::Core Qt5::Quick
         WebKit
-        ${GLIB_GOBJECT_LIBRARIES}
-        ${GLIB_LIBRARIES}
         ${LIBEPOXY_LIBRARIES}
         ${WPEBACKEND_FDO_LIBRARIES}
     )
@@ -436,7 +428,6 @@ if (ENABLE_WPE_QT_API)
     set(qtwpe_INCLUDE_DIRECTORIES
         $<TARGET_PROPERTY:WebKit,INCLUDE_DIRECTORIES>
         ${CMAKE_BINARY_DIR}
-        ${GLIB_INCLUDE_DIRS}
         ${Qt5_INCLUDE_DIRS}
         ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
         ${LIBEPOXY_INCLUDE_DIRS}
