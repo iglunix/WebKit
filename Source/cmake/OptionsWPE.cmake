@@ -231,7 +231,7 @@ endif ()
 
 add_definitions(-DBUILDING_WPE__=1)
 add_definitions(-DGETTEXT_PACKAGE="WPE")
-add_definitions(-DJSC_GLIB_API_ENABLED)
+#add_definitions(-DJSC_GLIB_API_ENABLED)
 
 if (USER_AGENT_BRANDING)
     add_definitions(-DUSER_AGENT_BRANDING=${USER_AGENT_BRANDING})

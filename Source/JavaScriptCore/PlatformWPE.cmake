@@ -1,14 +1,8 @@
-include(GLib.cmake)
-include(inspector/remote/GLib.cmake)
+include(inspector/remote/Socket.cmake)
 
-list(APPEND JavaScriptCore_LIBRARIES
-    ${GLIB_LIBRARIES}
-    ${GLIB_GMODULE_LIBRARIES}
-)
+list(APPEND JavaScriptCore_LIBRARIES)
 
-list(APPEND JavaScriptCore_SYSTEM_INCLUDE_DIRECTORIES
-    ${GLIB_INCLUDE_DIRS}
-)
+list(APPEND JavaScriptCore_SYSTEM_INCLUDE_DIRECTORIES)
 
 install(FILES ${JavaScriptCore_INSTALLED_HEADERS}
     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/wpe-webkit-${WPE_API_VERSION}/jsc"
@@ -16,4 +10,4 @@ install(FILES ${JavaScriptCore_INSTALLED_HEADERS}
 )
 
 add_definitions(-DJSC_COMPILATION)
-add_definitions(-DPKGLIBDIR="${CMAKE_INSTALL_FULL_LIBDIR}/wpe-webkit-${WPE_API_VERSION}")
+#add_definitions(-DPKGLIBDIR="${CMAKE_INSTALL_FULL_LIBDIR}/wpe-webkit-${WPE_API_VERSION}")

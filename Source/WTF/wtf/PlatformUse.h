@@ -66,7 +66,7 @@
 #define USE_CORE_IMAGE 1
 #endif
 
-#if PLATFORM(GTK) || PLATFORM(WPE)
+#if PLATFORM(GTK)
 #define USE_GLIB 1
 #endif
 
@@ -95,7 +95,7 @@
 #define USE_CF 1
 #endif
 
-#if PLATFORM(COCOA) || (PLATFORM(GTK) || PLATFORM(WPE))
+#if PLATFORM(COCOA) || (PLATFORM(GTK))
 #define USE_FILE_LOCK 1
 #endif
 
