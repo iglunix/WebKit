@@ -27,6 +27,7 @@ find_package(ZLIB REQUIRED)
 
 WEBKIT_OPTION_BEGIN()
 
+SET_AND_EXPOSE_TO_BUILD(USE_CURL ON)
 SET_AND_EXPOSE_TO_BUILD(ENABLE_DEVELOPER_MODE ${DEVELOPER_MODE})
 
 # include(GStreamerDefinitions)
@@ -308,4 +309,4 @@ set(WPE_PKGCONFIG_FILE ${CMAKE_BINARY_DIR}/wpe-webkit-${WPE_API_VERSION}.pc)
 set(WPEWebExtension_PKGCONFIG_FILE ${CMAKE_BINARY_DIR}/wpe-web-extension-${WPE_API_VERSION}.pc)
 
 include(BubblewrapSandboxChecks)
-include(GStreamerChecks)
+#include(GStreamerChecks)

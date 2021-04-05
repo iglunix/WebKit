@@ -12,8 +12,6 @@ endif ()
 
 list(APPEND WebCore_UNIFIED_SOURCE_LIST_FILES
     "SourcesWPE.txt"
-
-    "platform/SourcesGLib.txt"
 )
 
 #    "${WEBCORE_DIR}/platform/graphics/gstreamer"

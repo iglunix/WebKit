@@ -39,6 +39,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <dirent.h>
 #include <unistd.h>
 #include <wtf/Threading.h>
 #include <wtf/linux/CurrentProcessMemoryStatus.h>
