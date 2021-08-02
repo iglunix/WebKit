@@ -36,6 +36,8 @@
 
 #include <KHR/khrplatform.h>
 
+
+#define WL_EGL_PLATFORM 1
 /* Macros used in EGL function prototype declarations.
  *
  * EGL functions should be prototyped as:

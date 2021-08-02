@@ -40,6 +40,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
         Mac
         PlayStation
         WPE
+        WPM
         WinCairo
     )
     set(PORT "NOPORT" CACHE STRING "choose which WebKit port to build (one of ${ALL_PORTS})")

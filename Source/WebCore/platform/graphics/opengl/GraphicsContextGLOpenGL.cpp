@@ -203,6 +203,7 @@ void GraphicsContextGLOpenGL::prepareForDisplay()
 }
 #endif
 
+#if ENABLE(VIDEO)
 void GraphicsContextGLOpenGL::paintRenderingResultsToCanvas(ImageBuffer& imageBuffer)
 {
     if (!makeContextCurrent())
@@ -278,6 +279,7 @@ bool GraphicsContextGLOpenGL::copyTextureFromMedia(MediaPlayer& player, Platform
     return player.copyVideoTextureToPlatformTexture(this, outputTexture, outputTarget, level, internalFormat, format, type, premultiplyAlpha, flipY);
 #endif
 }
+#endif
 
 } // namespace WebCore
 

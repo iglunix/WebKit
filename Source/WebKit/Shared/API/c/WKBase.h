@@ -40,6 +40,8 @@
 #include <WebKit/WKBaseWin.h>
 #elif defined(__SCE__)
 #include <WebKit/WKBasePlayStation.h>
+#elif defined(BUILDING_WPM__)
+#include <WebKit/WKBaseWPM.h>
 #endif
 
 /* WebKit2 shared types */

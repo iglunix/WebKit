@@ -3084,6 +3084,7 @@ static void runInteractive(GlobalObject* globalObject)
         JSValue returnValue = evaluate(globalObject, jscSource(source, sourceOrigin), JSValue(), evaluationException);
 #else
         printf("%s", interactivePrompt);
+        fflush(stdout);
         Vector<char, 256> line;
         int c;
         while ((c = getchar()) != EOF) {

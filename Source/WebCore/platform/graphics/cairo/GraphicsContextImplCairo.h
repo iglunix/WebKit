@@ -105,9 +105,11 @@ public:
     IntRect clipBounds() override;
     void clipToImageBuffer(ImageBuffer&, const FloatRect&) override;
     void clipToDrawingCommands(const FloatRect& destination, DestinationColorSpace, Function<void(GraphicsContext&)>&&) override;
+#if ENABLE(VIDEO)
     void paintFrameForMedia(MediaPlayer&, const FloatRect& destination) override;
     bool canPaintFrameForMedia(const MediaPlayer&) const override { return false; }
-    
+#endif
+
     void applyDeviceScaleFactor(float) override;
 
     FloatRect roundToDevicePixels(const FloatRect&, GraphicsContext::RoundingMode) override;

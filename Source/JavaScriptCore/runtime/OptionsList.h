@@ -86,9 +86,9 @@ JS_EXPORT_PRIVATE bool canUseJITCage();
     \
     v(Bool, reportMustSucceedExecutableAllocations, false, Normal, nullptr) \
     \
-    v(Unsigned, maxPerThreadStackUsage, 5 * MB, Normal, "Max allowed stack usage by the VM") \
-    v(Unsigned, softReservedZoneSize, 128 * KB, Normal, "A buffer greater than reservedZoneSize that reserves space for stringifying exceptions.") \
-    v(Unsigned, reservedZoneSize, 64 * KB, Normal, "The amount of stack space we guarantee to our clients (and to interal VM code that does not call out to clients).") \
+    v(Unsigned, maxPerThreadStackUsage, 80 * KB , Normal, "Max allowed stack usage by the VM") \
+    v(Unsigned, softReservedZoneSize, 32 * KB, Normal, "A buffer greater than reservedZoneSize that reserves space for stringifying exceptions.") \
+    v(Unsigned, reservedZoneSize, 16 * KB, Normal, "The amount of stack space we guarantee to our clients (and to interal VM code that does not call out to clients).") \
     \
     v(Bool, crashOnDisallowedVMEntry, ASSERT_ENABLED, Normal, "Forces a crash if we attempt to enter the VM when disallowed") \
     v(Bool, crashIfCantAllocateJITMemory, false, Normal, nullptr) \

@@ -138,13 +138,14 @@ namespace WebCore {
         static bool modifiersContainCapsLock(unsigned);
 #endif
 
-#if USE(LIBWPE)
+// TODO FIX shouldn't comment should add logic but i'm lazy
+// #if USE(LIBWPE)
         static String keyValueForWPEKeyCode(unsigned);
         static String keyCodeForHardwareKeyCode(unsigned);
         static String keyIdentifierForWPEKeyCode(unsigned);
         static int windowsKeyCodeForWPEKeyCode(unsigned);
         static String singleCharacterString(unsigned);
-#endif
+// #endif
 
     protected:
         bool m_autoRepeat { false };
@@ -159,9 +160,10 @@ namespace WebCore {
         int m_windowsVirtualKeyCode { 0 };
 
         bool m_isSyntheticEvent { false };
-#if USE(APPKIT) || USE(UIKIT_KEYBOARD_ADDITIONS) || PLATFORM(GTK) || USE(LIBWPE)
+// FIXME same as above
+// #if USE(APPKIT) || USE(UIKIT_KEYBOARD_ADDITIONS) || PLATFORM(GTK) || USE(LIBWPE)
         bool m_handledByInputMethod { false };
-#endif
+// #endif
 #if PLATFORM(GTK) || USE(LIBWPE)
         Optional<Vector<WebCore::CompositionUnderline>> m_preeditUnderlines;
         Optional<uint64_t> m_preeditSelectionRangeStart;

@@ -27,6 +27,7 @@
 #include "JSCustomGetterFunction.h"
 
 #include "JSCJSValueInlines.h"
+#include "IdentifierInlines.h"
 
 namespace JSC {
 
